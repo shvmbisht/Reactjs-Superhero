@@ -8,22 +8,26 @@ class CharacterList extends Component {
     render (){
         return (
             <div>
-                <h3>
+                <h3 style={{ color:'#808000', fontWeight: 'bold'}}>
                     Characters
                 </h3>
-                <ul className="list-group">
+                <div className="charList">
+                <ul className="list-group order-list">
                     {
                         this.props.characters.map((character) =>{
                             return (
                                 <li key={character.id} className="list-group-item">
                                     <div className="list-item">{character.name}</div>
-                                    <div onClick={()=> this.props.addCharacterById(character.id)}>+</div>
+                                    <div className="list-item right-button" onClick={()=> this.props.addCharacterById(character.id)}>+</div>
                                 </li>
                             )
                         })  
                     }
                 </ul>
-            </div>
+
+
+                </div>
+                            </div>
         )
     }
 }
